@@ -1,0 +1,413 @@
+/* TOC */
+/* 
+01  hero section
+02  navigation
+03  articles
+04  newsletter registration
+05  footer
+06  media queries min width 760px
+07  media queries min width 1000px
+*/
+
+/* import font */
+@font-face {
+  font-family: 'Fonseca';
+  src: url('../assets/fonts/FonsecaMedium.woff2') format('woff2'),
+    url('../assets/fonts/FonsecaMedium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+nav,
+a.hero-btn,
+button {
+  font-family: 'Fonseca', sans-serif;
+  font-size: 2.5rem;
+}
+
+h1 {
+  padding: 5rem 5% 2.5% 5%;
+}
+
+/* 01 hero section */
+
+a.hero-btn {
+  font-size: 1.5rem;
+  margin: 120% 20% 20% 20%;
+  text-align: center;
+  display: inline-block;
+  padding: 0.8rem 1.3rem;
+  position: relative;
+  box-shadow: inset 0 0 0.8em rgba(255, 255, 255, 0.3), 0 0 0.8em rgba(255, 255, 255, 0.3);
+  border: 2px solid var(--white);
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+a.hero-btn:hover {
+  color: var(--black);
+  background-color: var(--white);
+  box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.3), 0 0 1.2em rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+section.hero-section {
+  color: var(--white);
+  width: 100vw;
+  height: 100vh;
+}
+
+div.background-img {
+  background-image: url(../assets/images/hero_image.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+
+hr {
+  border: 1px solid var(--white);
+  width: 80%;
+  margin: 0 auto 0 5%;
+}
+
+div.quote-container {
+  width: 18rem;
+  height: 18rem;
+  border: 1px solid var(--white);
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: inset 0 0 0.8em rgba(255, 255, 255, 0.5), 0 0 0.8em rgba(255, 255, 255, 0.3);
+  position: absolute;
+  left: 20%;
+  top: 30%;
+  display: flex;
+  align-items: center;
+}
+
+p.quote-of-the-day {
+  font-size: 1.3rem;
+  padding: 2rem;
+}
+
+span.mark-1 {
+  position: absolute;
+  left: 15%;
+  top: -7%;
+  height: 2rem;
+  width: 2rem;
+}
+
+span.mark-2 {
+  position: absolute;
+  left: 70%;
+  top: 94%;
+  height: 2rem;
+  width: 2rem;
+}
+
+/* 02 navigation */
+
+nav {
+  margin: 3rem 3rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+nav>button {
+  color: var(--black);
+  padding: 0;
+  font-size: 1.5rem;
+}
+
+nav>button:hover {
+  opacity: 1;
+}
+
+nav>button.active {
+  opacity: 1;
+}
+
+nav>p {
+  display: none;
+}
+
+/* 03 articles */
+
+ul {
+  padding: 2.5rem;
+  margin: 0 auto 5rem auto;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  row-gap: 8rem;
+}
+
+div.post {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+div.img-container {
+  height: 200px;
+  overflow: hidden;
+}
+
+div.img-container>img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+div.post>p {
+  font-size: 1rem;
+}
+
+span.date {
+  opacity: 0.5;
+}
+
+button.continue-reading {
+  font-family: 'Roboto', sans-serif;
+  text-align: center;
+  display: inline-block;
+  padding: 0.5rem;
+  box-shadow: inset 0 0 0.8em rgba(0, 0, 0, 0.3), 0 0 0.8em rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--black);
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+  color: var(--black);
+  width: 50%;
+  max-width: 180px;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+
+button.continue-reading:hover {
+  color: var(--white);
+  background-color: var(--black);
+  box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.3), 0 0 1.2em rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+
+/* 04 newsletter registration */
+
+section.newsletter-registration {
+  background: var(--lightBackground);
+  padding: 3rem;
+}
+
+div.registration-container {
+  position: relative;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+input {
+  width: 100%;
+  margin: 2rem auto;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: var(--white);
+  box-shadow: inset 0 0 0.8em rgba(var(--white), 0.3), 0 0 0.8em rgba(var(--white), 0.3);
+  border: 2px solid var(--white);
+  transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+button:hover {
+  color: rgba(var(--black), 0.8);
+  background-color: var(--white);
+  box-shadow: inset 0 0 0 rgba(255, 255, 255, 0.3), 0 0 1.2em rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+div.error {
+  opacity: 1;
+  border-left: 5px solid var(--errorRed);
+  background: var(--white);
+  box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+  position: absolute;
+}
+
+div.error>p {
+  font-size: 1rem;
+  padding: 0.5rem;
+}
+
+/* 05 footer */
+
+footer {
+  background: var(--darkBackground);
+  color: var(--white);
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.footer-content {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div.socials {
+  display: flex;
+  gap: 1rem;
+}
+
+div.socials>img {
+  height: 1rem;
+  width: auto;
+}
+
+div.legal {
+  display: flex;
+  gap: 1rem;
+}
+
+/* 06 media queries min width 760px */
+
+@media (min-width: 760px) {
+
+  a.hero-btn {
+    margin: 85% 20% 20%;
+    text-align: left;
+  }
+
+  div.quote-container {
+    left: 50%;
+  }
+
+  nav {
+    margin: 5rem 5rem 2rem 5rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.2rem;
+  }
+
+  nav>button {
+    text-align: center;
+    font-size: 2rem;
+    opacity: 0.4;
+  }
+
+  nav>p {
+    display: initial;
+    opacity: 0.4;
+    font-size: 2rem;
+  }
+
+  ul {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  div.registration-container {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem auto;
+  }
+
+  input {
+    margin: 0;
+  }
+
+}
+
+/* 07 media queries min width 1000 px */
+
+@media (min-width: 1000px) {
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  a.hero-btn {
+    margin: 30% 20% 20%;
+  }
+
+  div.quote-container {
+    left: 60%;
+    top: 40%;
+  }
+
+  nav {
+    max-width: 800px;
+    margin: 5rem auto 2rem auto;
+  }
+
+  nav>button>br {
+    display: none;
+  }
+
+  ul {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 1500px;
+  }
+
+  section.newsletter-registration {
+    padding: 4rem;
+  }
+
+  div.registration-container {
+    width: 70%;
+    max-width: 700px;
+    margin: 3rem 0 2rem;
+    gap: 3rem;
+  }
+
+  div.socials>img {
+    height: 1.5rem;
+    width: auto;
+  }
+
+}
+
+@media (min-width:1200px) {
+
+  ul {
+    gap: 5rem;
+  }
+
+}
