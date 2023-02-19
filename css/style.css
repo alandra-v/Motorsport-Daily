@@ -303,7 +303,13 @@ div.socials>img {
 
 div.legal {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   gap: 1rem;
+}
+
+p.divider {
+  display: none;
 }
 
 /* 06 media queries min width 760px */
@@ -351,6 +357,16 @@ div.legal {
 
   input {
     margin: 0;
+  }
+
+  div.legal {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  p.divider {
+    display: initial;
   }
 
 }
