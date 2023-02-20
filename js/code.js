@@ -63,7 +63,7 @@ function createPostList(posts) {
       <h3>${post.title}</h3>
       <p class="caption">${post.caption}</p>
       <span class="date" aria-label="${post.date}">${post.date}</span>
-      <button class="continue-reading">Continue reading > </button>
+      <button class="continue-reading">Weiterlesen > </button>
     </div>
     `;
 

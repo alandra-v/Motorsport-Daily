@@ -15,7 +15,7 @@ function createQuoteList(quoteI) {
   // for (let i = 0; i <= quotes.length; i++) {
   const quote = document.createElement("p");
   quote.classList.add("quote-of-the-day");
-  quote.innerHTML = `<p class="quote-title">Quote of the day:<br><br> ${quoteI}</p>`;
+  quote.innerHTML = `<p class="quote-title">Zitat des Tages:<br><br> ${quoteI}</p>`;
   document.querySelector("div.quote-container").appendChild(quote);
   // console.log(quote);
   // }
