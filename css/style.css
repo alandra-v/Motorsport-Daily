@@ -61,6 +61,7 @@ a.hero-btn {
   position: relative;
   box-shadow: inset 0 0 0.8em rgba(255, 255, 255, 0.3), 0 0 0.8em rgba(255, 255, 255, 0.3);
   border: 2px solid var(--white);
+  -webkit-transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
   transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
@@ -103,7 +104,9 @@ div.quote-container {
   position: absolute;
   left: 20%;
   top: 30%;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
 }
 
@@ -132,7 +135,10 @@ span.mark-2 {
 
 nav {
   margin: 3rem 3rem 0 3rem;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
   gap: 0.5rem;
 }
@@ -172,6 +178,8 @@ div.post {
   width: 100%;
   height: 100%;
   display: grid;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
   gap: 1rem;
 }
@@ -184,6 +192,7 @@ div.img-container {
 div.img-container>img {
   width: 100%;
   height: 200px;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 
@@ -207,6 +216,7 @@ button.continue-reading {
   padding: 0.5rem;
   box-shadow: inset 0 0 0.8em rgba(0, 0, 0, 0.3), 0 0 0.8em rgba(0, 0, 0, 0.3);
   border: 1px solid var(--black);
+  -webkit-transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
   transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
   color: var(--black);
   width: 50%;
@@ -254,6 +264,7 @@ button {
   color: var(--white);
   box-shadow: inset 0 0 0.8em rgba(var(--white), 0.3), 0 0 0.8em rgba(var(--white), 0.3);
   border: 2px solid var(--white);
+  -webkit-transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
   transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
 }
 
@@ -283,20 +294,27 @@ footer {
   background: var(--darkBackground);
   color: var(--white);
   height: 20vh;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-align: center;
   align-items: center;
+  -webkit-box-pack: center;
   justify-content: center;
 }
 
 div.footer-content {
   width: 85%;
   margin: 0 auto;
+  display: -webkit-box;
   display: flex;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
 }
 
 div.socials {
+  display: -webkit-box;
   display: flex;
   gap: 1rem;
 }
@@ -307,8 +325,12 @@ div.socials>img {
 }
 
 div.legal {
+  display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
+  -webkit-box-align: end;
   align-items: flex-end;
   gap: 1rem;
 }
@@ -332,8 +354,12 @@ p.divider {
 
   nav {
     margin: 5rem 5rem 2rem 5rem;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-direction: row;
+    -webkit-box-align: center;
     align-items: center;
+    -webkit-box-pack: justify;
     justify-content: space-between;
     gap: 1.2rem;
   }
@@ -357,6 +383,7 @@ p.divider {
   }
 
   div.registration-container {
+    display: -webkit-box;
     display: flex;
     gap: 1rem;
     margin: 2rem auto;
@@ -367,7 +394,10 @@ p.divider {
   }
 
   div.legal {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
     flex-direction: row;
+    -webkit-box-align: center;
     align-items: center;
     gap: 1rem;
   }
