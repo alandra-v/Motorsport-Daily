@@ -1,61 +1,71 @@
+/******************/
+/* BLOG ARTICLES */
+/*****************/
+
 // fetch data with async await
 
 const apiURL = "API_data/blogPosts.json";
 
+getData();
+
 async function getData() {
 
+  // fetch and filter data
   const response = await fetch(apiURL);
-  const data = await response.json();
+  const dataAll = await response.json();
+  // console.log(dataAll);
+  const dataCEC = dataAll.filter(post => (post.category === "c-e-cars"));
+  // console.log(dataCEC);
+  const dataEC = dataAll.filter(post => (post.category === "e-cars"));
+  // console.log(dataEC);
 
-  // console.log(data);
-  createPostList(data);
-  return data;
+
+  // Variables
+
+  const btnAll = document.querySelector("button.all");
+  const btnCEC = document.querySelector("button.c-e-cars");
+  const btnEC = document.querySelector("button.e-cars");
+
+
+  // Function Calls
+  createPostList(dataAll);
+
+
+  // Event Listeners
+  btnAll.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePostList(dataAll)
+    console.log("click all");
+  });
+  btnCEC.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePostList(dataCEC)
+    console.log("click cec");
+  });
+  btnEC.addEventListener("click", (e) => {
+    e.preventDefault();
+    generatePostList(dataEC)
+    console.log("click cec");
+  });
+
 }
-
-const dataPosts = getData()
-const dataPostsArr = dataPosts || [];
-console.log(dataPosts);
-console.log(dataPostsArr);
-
-// Variables
-
-const btnAll = document.querySelector("button.all");
-const btnCEC = document.querySelector("button.c-e-cars");
-const btnEC = document.querySelector("button.e-cars");
-
-// filter only combustion engine cars articles
-const postsDatafilteredCEC = dataPostsArr.filter(post => (post.category === "c-e-cars"));
-console.log(postsDatafilteredCEC);
-// filter only electric cars articles
-const postsDatafilteredEC = dataPostsArr.filter(post => (post.category === "e-cars"));
-console.log(postsDatafilteredEC);
 
 // Functions
 
-function generatePostList(category) {
-  if (document.querySelector("ul")) {
-    document.querySelector("ul").remove();
-    createPostList(category);
-    console.log("ul removed");
-  } else {
-    createPostList(category);
-    console.log("new ul");
-  }
-}
-
 function createPostList(posts) {
+
   posts.forEach(post => {
     const template = `
-      <div class="post">
-         <div class="img-container">
-         <img src="${post.thumbnail}" alt="${post.alt}" class="thumbnail" height="200" width="auto">
-        </div>
-        <h3>${post.title}</h3>
-        <p class="caption">${post.caption}</p>
-        <span class="date" aria-label="${post.date}">${post.date}</span>
-        <button class="continue-reading">Continue reading > </button>
+    <div class="post">
+       <div class="img-container">
+       <img src="${post.thumbnail}" alt="${post.alt}" class="thumbnail" height="200" width="520">
       </div>
-      `;
+      <h3>${post.title}</h3>
+      <p class="caption">${post.caption}</p>
+      <span class="date" aria-label="${post.date}">${post.date}</span>
+      <button class="continue-reading">Continue reading > </button>
+    </div>
+    `;
 
     if (!document.querySelector("ul")) {
       const postsContainer = document.createElement("ul");
@@ -74,14 +84,17 @@ function createPostList(posts) {
   });
 }
 
-// Event Listeners
+function generatePostList(posts) {
+  if (document.querySelector("ul")) {
+    document.querySelector("ul").remove();
+    createPostList(posts);
+    console.log("ul removed");
+  } else {
+    createPostList(posts);
+    console.log("new ul");
+  }
+}
 
-btnAll.addEventListener("click", function () { console.log("click all") });
-btnCEC.addEventListener("click", function () { console.log("click cec") });
-btnEC.addEventListener("click", function () { console.log("click ec") });
-btnAll.addEventListener("click", function () { generatePostList(postsDataArr) });
-btnCEC.addEventListener("click", function () { generatePostList(postsDatafilteredCEC) });
-btnEC.addEventListener("click", function () { generatePostList(postsDatafilteredEC) });
 
 
 /*********************/
