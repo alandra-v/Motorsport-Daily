@@ -26,6 +26,7 @@ async function getData() {
   const btnCEC = document.querySelector("button.c-e-cars");
   const btnEC = document.querySelector("button.e-cars");
 
+  const navBtns = [btnAll, btnCEC, btnEC];
 
   // Function Calls
   createPostList(dataAll);
@@ -35,17 +36,23 @@ async function getData() {
   btnAll.addEventListener("click", (e) => {
     e.preventDefault();
     generatePostList(dataAll)
-    console.log("click all");
+    // console.log("click all");
+    navBtns.forEach((btn) => { btn.classList.remove("active") });
+    btnAll.classList.add("active");
   });
   btnCEC.addEventListener("click", (e) => {
     e.preventDefault();
     generatePostList(dataCEC)
-    console.log("click cec");
+    // console.log("click cec");
+    navBtns.forEach((btn) => { btn.classList.remove("active") });
+    btnCEC.classList.add("active");
   });
   btnEC.addEventListener("click", (e) => {
     e.preventDefault();
     generatePostList(dataEC)
-    console.log("click cec");
+    // console.log("click cec");
+    navBtns.forEach((btn) => { btn.classList.remove("active") });
+    btnEC.classList.add("active");
   });
 
 }
