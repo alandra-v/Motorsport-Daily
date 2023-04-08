@@ -50,5 +50,5 @@ switch (day.getDay()) {
     break;
   default:
     createQuoteList("“Any man can learn anything he will, but no man can teach except to those who want to learn.” ~Henry Ford");
-    console.log("the week only has 7 days");
+    // console.log("the week only has 7 days");
 }
