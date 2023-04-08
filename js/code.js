@@ -95,10 +95,10 @@ function generatePostList(posts) {
   if (document.querySelector("ul")) {
     document.querySelector("ul").remove();
     createPostList(posts);
-    console.log("ul removed");
+    // console.log("ul removed");
   } else {
     createPostList(posts);
-    console.log("new ul");
+    // console.log("new ul");
   }
 }
 
@@ -120,7 +120,7 @@ const container = document.querySelector("div.registration-container");
 function emailValidation(e) {
 
   const emailRegEx =
-    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+     /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
   email = emailInput.value;
   if (!email) {
@@ -156,7 +156,7 @@ function errorDisplay() {
 
 function sendData() {
   // sending email address to backend
-  console.log("sending email address to backend");
+  // console.log("sending email address to backend");
   submitBtn.style.display = "none";
 }
 
